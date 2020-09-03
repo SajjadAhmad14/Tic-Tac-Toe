@@ -23,7 +23,9 @@ class Board
       move
     end
 
-    def update_board
+    def reset_board
+      @game_board.each do |key, value|
+        @game_board[key] = ''
+      end
     end
-
 end

@@ -20,5 +20,6 @@ board.print_board
 puts "Please enter number 1-9 to put x or o there!"
 move = gets.chomp
 board.validate_move(move)
+board.reset_board
 
 
