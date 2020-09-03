@@ -1,4 +1,5 @@
 class Board
+      attr_accessor : game_board
     def initialize(player)
         @game_board = {'1' => '1', '2' => '3', '3' => '3',
               '4' => '4', '5' => '5', '6' => '6',
@@ -38,4 +39,21 @@ class Board
           @game_board[move] = @player.tag2
         end
     end
+    
+    def check_vertical
+        vertical1 = game_board['1'], game_board['2'], game_board['7']
+        vertical2 = game_board['2'], game_board['5'], game_board['8']
+        vertical2 = game_board['3'], game_board['6'], game_board['9']
+    end
+
+    def check_horizontal
+        horizontal1 = game_board['1'], game_board['2'], game_board['3']
+        horizontal2 = game_board['4'], game_board['5'], game_board['6']
+        horizontal2 = game_board['7'], game_board['8'], game_board['9']
+    end
+
+    def check_diagonal
+      diagonal1 = game_board['1'], game_board['5'], game_board['9']
+      diagonal2 = game_board['3'], game_board['5'], game_board['7']
+    end 
 end

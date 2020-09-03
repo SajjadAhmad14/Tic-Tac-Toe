@@ -18,11 +18,11 @@ board.print_board
 board.reset_board
 board.print_board
 
-# loop do
+loop do
   puts "#{player.name1}, it's you turn! Please enter in 1-9 in blank location only"
   move = gets.chomp
   move = board.validate_move(move)
   board.update_board(move, player1_name)
   board.print_board
-
-# end
+  
+end
