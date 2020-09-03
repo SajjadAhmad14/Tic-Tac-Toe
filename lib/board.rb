@@ -1,18 +1,20 @@
 class Board
-    def initialize
-        @game_board = {'1' => '1', '2' => '', '3' => '3',
+    def initialize(player)
+        @game_board = {'1' => '1', '2' => '3', '3' => '3',
               '4' => '4', '5' => '5', '6' => '6',
               '7' => '7', '8' => '8', '9' => '9'
              }
+        @player = player
     end
 
     def print_board
-      print @game_board['1'] + " " + "|" + @game_board['2'] + " " + "|" + " " + @game_board['3']
-      puts
-      print @game_board['4'] + " " + "|" + @game_board['5'] + " " + "|" + " " + @game_board['6']
-      puts 
-      print @game_board['7'] + " " + "|" + @game_board['8'] + " " + "|" + " " + @game_board['9']
-      puts
+    #   print @game_board['1'] + " " + "|" + " " + @game_board['2'] + "|" + @game_board['3']
+    #   puts
+    #   print @game_board['4'] + " " + "|" + " " + @game_board['5'] + "|" + @game_board['6']
+    #   puts 
+    #   print @game_board['7'] + " " + "|" + " " + @game_board['8'] + "|" + @game_board['9']
+    #   puts
+    puts @game_board
     end
 
     def validate_move(move)
@@ -27,5 +29,13 @@ class Board
       @game_board.each do |key, value|
         @game_board[key] = ''
       end
+    end
+
+    def update_board(move, name)
+        if name == @player.name1
+          @game_board[move] = @player.tag1
+        else
+          @game_board[move] = @player.tag2
+        end
     end
 end
