@@ -23,6 +23,4 @@ loop do
   move = gets.chomp
   move = board.validate_move(move)
   board.update_board(move, player1_name)
-  board.print_board
-  
 end
